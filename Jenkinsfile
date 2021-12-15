@@ -8,6 +8,23 @@ pipeline {
           url: 'https://github.com/nehsh/Test-repo.git'
         }
       }
+      stage('Maven Version'){
+        steps{
+          echo "Hello, Maven"
+          sh "mvn --version"
+        }
+      }
+      stage('Maven Install'){
+        steps{
+          sh "mvn clean install"
+        }
+      }
+      stage('Quality Analysis') {
+        steps
+        {
+          sh "mvn sonar:sonar"
+        }
+      }
     }
   }
 }
