@@ -1,5 +1,5 @@
 pipeline {
-  agent any {
+  agent any
     stages {
       stage ('code checkout'){
         steps {
@@ -16,6 +16,7 @@ pipeline {
       }
       stage('Maven Install'){
         steps{
+          echo "compiling the code"
           sh "mvn clean install"
         }
       }
