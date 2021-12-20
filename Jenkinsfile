@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools{
+    maven 'maven-3.5.2'
+       }
     stages {
       stage ('code checkout'){
         steps {
@@ -21,12 +24,12 @@ pipeline {
           sh "mvn clean install"
         }
       }
-      stage('Quality Analysis') {
-        steps
-        {
-          sh "mvn sonar:sonar"
-        }
-      }
+     // stage('Quality Analysis') {
+        //steps
+        //{
+          //sh "mvn sonar:sonar"
+        //}
+      //}
     }
   }
 
