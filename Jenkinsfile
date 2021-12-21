@@ -18,19 +18,26 @@ pipeline {
           sh "mvn --version"
         }
       }
+      stage('compile and test'){
+        steps{
+          echo "compiling and testing the code"
+          sh "mvn clean compile test"
+        }
+      }  
       stage('Maven Install'){
         steps{
           echo "compiling the code"
           sh "mvn clean install"
         }
       }
-     // stage('Quality Analysis') {
-        //steps
-        //{
-          //sh "mvn sonar:sonar"
-        //}
-      //}
-    }
+      stage('Sonar Scan') {
+        steps {
+          withSonarQubeEnv(installationName: 'sonar1') { 
+              sh "mvn clean sonar:sonar"
+            }
+              }
+         }
+     }
   }
 
   
