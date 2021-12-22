@@ -31,6 +31,15 @@ pipeline {
             }
               }
          }
+      stage('publish to Nexus repository'){
+        steps {
+          echo "publish the package to nexus artifactory"
+          nexusPublisher nexusInstanceId: 'Nexus', 
+          nexusRepositoryId: 'hello_world-release', 
+          packages: [[$class: 'MavenPackage', mavenAssetList: [], 
+          mavenCoordinate: [artifactId: 'hello_world', groupId: 'com.mycompany', packaging: 'jar', version: '1.0.0']]]
+        }
+      }
      }
   }
 
