@@ -34,11 +34,28 @@ pipeline {
               }
          }
           
-     stage('deploy-to-nexus') {
-      steps {
-        git 'https://github.com/nehsh/Test-repo.git'
-        // use profile nexus (-P nexus) to deploy to Nexus.
-        sh "mvn clean deploy -P nexus"
+      stage('Upload War To Nexus'){
+            steps{
+                script{
+                    
+                    def mavenPom = readMavenPom file: 'pom.xml'
+                    def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "hello_world-snapshots" : "hello_world-release"
+                    nexusArtifactUploader artifacts: [
+                        [
+                            artifactId: 'hello_world', 
+                            classifier: '', 
+                            file: "target/hello_world-${mavenPom.version}.jar", 
+                            type: 'jar'
+                        ]
+                    ], 
+                    credentialsId: 'Nexus3', 
+                    groupId: 'com.mycompany', 
+                    nexusUrl: '35.200.199.182', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', 
+                    repository: hello_world-release, 
+                    version: "${mavenPom.version}"
+                    }
             }
         }
      }
