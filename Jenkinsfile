@@ -12,6 +12,7 @@ pipeline {
           url: 'https://github.com/nehsh/Test-repo.git'
         }
       }
+      
       stage('Maven Version'){
         steps{
           echo "Hello, Maven"
@@ -24,6 +25,7 @@ pipeline {
           sh "mvn clean install"
         }
       }
+      
       stage('Sonar Scan') {
         steps {
           withSonarQubeEnv(installationName: 'sonar1') { 
@@ -31,15 +33,14 @@ pipeline {
             }
               }
          }
-      stage('publish to Nexus repository'){
-        steps {
-          echo "publish the package to nexus artifactory"
-          nexusPublisher nexusInstanceId: 'Nexus', 
-          nexusRepositoryId: 'hello_world-release', 
-          packages: [[$class: 'MavenPackage', mavenAssetList: [], 
-          mavenCoordinate: [artifactId: 'hello_world', groupId: 'com.mycompany', packaging: 'jar', version: '1.0.0']]]
+          
+     stage('deploy-to-nexus') {
+      steps {
+        git 'https://github.com/nehsh/Test-repo.git'
+        // use profile nexus (-P nexus) to deploy to Nexus.
+        sh "mvn clean deploy -P nexus"
+            }
         }
-      }
      }
   }
 
