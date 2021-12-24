@@ -37,24 +37,25 @@ pipeline {
       stage('Upload War To Nexus'){
             steps{
                 script{
-                    
-                    def mavenPom = readFile file: 'pom.xml'
+                    pom = readMavenPom file: "pom.xml";
+                    //def mavenPom = readFile file: 'pom.xml'
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "hello_world-snapshots" : "hello_world-release"
-                    nexusArtifactUploader artifacts: [
+                    nexusArtifactUploader(
+                      credentialsId: 'Nexus3', 
+                      groupId: 'com.mycompany', 
+                      nexusUrl: '35.200.199.182', 
+                      nexusVersion: 'nexus3', 
+                      protocol: 'http', 
+                      repository: hello_world-release, 
+                      version: "${pom.version}"
+                      artifacts: [
                         [
                             artifactId: 'hello_world', 
                             classifier: '', 
-                            file: "target/hello_world-${mavenPom.version}.jar", 
+                            file: "target/hello_world-${pom.version}.jar", 
                             type: 'jar'
                         ]
-                    ], 
-                    credentialsId: 'Nexus3', 
-                    groupId: 'com.mycompany', 
-                    nexusUrl: '35.200.199.182', 
-                    nexusVersion: 'nexus3', 
-                    protocol: 'http', 
-                    repository: hello_world-release, 
-                    version: "${mavenPom.version}"
+                    ]) 
                     }
             }
         }
