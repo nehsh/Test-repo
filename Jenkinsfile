@@ -54,7 +54,6 @@ pipeline {
                       protocol: 'http', 
                       repository: 'hello_world-release', 
                       version: "1.0.0"                                        
-                }
             }
         }
      }
