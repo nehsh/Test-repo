@@ -47,7 +47,7 @@ pipeline {
                       classifier: '', 
                       file: "artifactPath", 
                       type: 'pom.packaging']]
-                      credentialsId: 'bbb2026f-8763-4091-a5b9-b029d602d093', 
+                      credentialsId: 'Nexus3', 
                       groupId: 'com.mycompany', 
                       nexusUrl: '35.200.199.182', 
                       nexusVersion: 'nexus3', 
