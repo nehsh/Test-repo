@@ -38,6 +38,9 @@ pipeline {
             steps{
                 script{
                     pom = readFile file: "pom.xml";
+                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
+                    artifactPath = filesByGlob[0].path;
+                    echo "connecting to Nexus"
                     //def mavenPom = readFile file: 'pom.xml'
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "hello_world-snapshots" : "hello_world-release"
                     nexusArtifactUploader(
@@ -49,11 +52,14 @@ pipeline {
                       repository: hello_world-release, 
                       version: "${pom.version}",
                       artifacts: [
-                        [
-                            artifactId: 'hello_world', 
+                        [   artifactId: 'pom.artifactId', 
                             classifier: '', 
-                            file: "target/hello_world-${pom.version}.jar", 
-                            type: 'jar']
+                            file: "artifactPath", 
+                            type: 'pom.packaging']
+                        [   artifactId: pom.artifactId,
+                            classifier: '',
+                            file: "pom.xml",
+                            type: "pom"]
                     ]
                   )
                 }
