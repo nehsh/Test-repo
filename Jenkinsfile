@@ -36,24 +36,24 @@ pipeline {
           
       stage('Upload War To Nexus'){
             steps{
-                script{
-                    pom = readFile file: "pom.xml";
-                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
-                    artifactPath = filesByGlob[0].path;
-                    echo "connecting to Nexus"
+                //script{
+                    //pom = readFile file: "pom.xml";
+                    //filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
+                    //artifactPath = filesByGlob[0].path;
+                    //echo "connecting to Nexus"
                     //def mavenPom = readFile file: 'pom.xml'
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "hello_world-snapshots" : "hello_world-release"
-                    nexusArtifactUploader artifacts:[[artifactId: 'pom.artifactId', 
+                    nexusArtifactUploader artifacts:[[artifactId: 'hello_world', 
                       classifier: '', 
-                      file: "artifactPath", 
-                      type: 'pom.packaging']],
+                      file: 'target/hello_world-1.0.0.jar', 
+                      type: 'jar']],
                       credentialsId: 'bbb2026f-8763-4091-a5b9-b029d602d093', 
                       groupId: 'com.mycompany', 
                       nexusUrl: '35.200.199.182', 
                       nexusVersion: 'nexus3', 
                       protocol: 'http', 
                       repository: 'hello_world-release', 
-                      version: "${pom.version}"                                        
+                      version: "1.0.0"                                        
                 }
             }
         }
