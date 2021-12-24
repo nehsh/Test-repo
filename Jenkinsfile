@@ -55,7 +55,7 @@ pipeline {
                             file: "target/hello_world-${pom.version}.jar", 
                             type: 'jar']
                     ]
-                  ),
+                  )
                 }
             }
         }
