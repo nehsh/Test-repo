@@ -47,16 +47,16 @@ pipeline {
                       nexusVersion: 'nexus3', 
                       protocol: 'http', 
                       repository: hello_world-release, 
-                      version: "${pom.version}"
+                      version: "${pom.version}",
                       artifacts: [
                         [
                             artifactId: 'hello_world', 
                             classifier: '', 
                             file: "target/hello_world-${pom.version}.jar", 
-                            type: 'jar'
-                        ]
-                    ]),
-                    }
+                            type: 'jar']
+                    ]
+                  ),
+                }
             }
         }
      }
