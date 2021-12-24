@@ -37,7 +37,7 @@ pipeline {
       stage('Upload War To Nexus'){
             steps{
                 script{
-                    pom = readMavenPom file: "pom.xml";
+                    pom = readFile file: "pom.xml";
                     //def mavenPom = readFile file: 'pom.xml'
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "hello_world-snapshots" : "hello_world-release"
                     nexusArtifactUploader(
