@@ -45,7 +45,7 @@ pipeline {
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "hello_world-snapshots" : "hello_world-release"
                     nexusArtifactUploader artifacts:[[artifactId: 'hello_world', 
                       classifier: '', 
-                      file: 'target/hello_world-1.0.0-SNAPSHOT.jar', 
+                      file: 'target/hello_world-1.0.0-SNAPSHOT-mule-application.jar', 
                       type: 'mule-application']],
                       credentialsId: 'bbb2026f-8763-4091-a5b9-b029d602d093', 
                       groupId: 'com.mycompany', 
