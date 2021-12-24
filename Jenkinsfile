@@ -43,21 +43,17 @@ pipeline {
                     echo "connecting to Nexus"
                     //def mavenPom = readFile file: 'pom.xml'
                     //def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "hello_world-snapshots" : "hello_world-release"
-                    nexusArtifactUploader(
-                      credentialsId: 'Nexus3', 
+                    nexusArtifactUploader artifacts:[[artifactId: 'pom.artifactId', 
+                      classifier: '', 
+                      file: "artifactPath", 
+                      type: 'pom.packaging']]
+                      credentialsId: 'bbb2026f-8763-4091-a5b9-b029d602d093', 
                       groupId: 'com.mycompany', 
                       nexusUrl: '35.200.199.182', 
                       nexusVersion: 'nexus3', 
                       protocol: 'http', 
-                      repository: hello_world-release, 
-                      version: "${pom.version}",
-                      artifacts: [
-                        [   artifactId: 'pom.artifactId', 
-                            classifier: '', 
-                            file: "artifactPath", 
-                            type: 'pom.packaging']
-                      ] 
-                  )
+                      repository: 'hello_world-release', 
+                      version: "${pom.version}"                                         
                 }
             }
         }
