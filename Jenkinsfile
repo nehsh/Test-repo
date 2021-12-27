@@ -52,7 +52,7 @@ pipeline {
                       nexusUrl: '35.200.199.182', 
                       nexusVersion: 'nexus3', 
                       protocol: 'http', 
-                      repository: 'hello_world-release', 
+                      repository: 'Hello-world_snapshot', 
                       version: "1.0.0-SNAPSHOT"                                      
             }
         }
