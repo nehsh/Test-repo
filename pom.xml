@@ -16,6 +16,7 @@
 		<app.runtime>4.3.0-20211026</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
 		<maven.deploy.plugin.version>3.5.2</maven.deploy.plugin.version>
+		<mule.env>dev</mule.env>
 	</properties>
 
 	<build>
@@ -30,6 +31,21 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+					<classifier>mule-application</classifier>
+					<cloudHubDeployment>
+					<uri>https://anypoint.mulesoft.com</uri>
+					<muleVersion>4.3.0</muleVersion>
+					<username>~~~Client~~~</username>
+					<password>004d5f11b5cd4f2d956ce1201099ba76~?~beeaD9a6897d4c0b8Ea925fa0D091817</password>
+					<applicationName>hello_world</applicationName>
+					<environment>DEV</environment>
+					<region>us-e2</region>
+					<workerType>Micro</workerType>
+					<workers>1</workers>
+					<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -53,7 +69,7 @@
 		<repository>
 			<id>anypoint-exchange-v2</id>
 			<name>Anypoint Exchange</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
 			<layout>default</layout>
 		</repository>
 		<repository>
@@ -89,6 +105,14 @@
 		    </snapshotRepository>
 		</distributionManagement>
 	    </profile>
-	</profiles>			  
+	</profiles>
+	<distributionManagement>
+	     <repository>
+		     <id>anypoint-exchange-v2></id>
+		     <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
+		     <layout>default</layout>
+		</repository>
+	</distributionManagement>
+		     
 
 </project>
