@@ -56,6 +56,11 @@ pipeline {
                       version: "1.0.0-SNAPSHOT"                                      
             }
         }
+      stage('deploy to Exchange'){
+        steps{
+          sh "mvn deploy"
+        }
+      }
      }
   }
 
