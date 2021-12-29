@@ -66,7 +66,6 @@ pipeline {
       stage('download from nexus'){
         steps{
           withCredentials([usernamePassword(credentialsId: 'nexus', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
-          params.Current_Build_Deploy == 'Yes'
           sh 'curl -k -u $USERNAME:$PASSWORD  http://35.200.199.182/repository/Hello-world_snapshot/com/mycompany/hello_world/1.0.0-SNAPSHOT/hello_world-1.0.0-20211229.065117-6.mule-application --output mule-application.jar'
           sh 'ls -lrta' 
           echo "downloading from nexus"
