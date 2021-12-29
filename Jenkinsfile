@@ -73,10 +73,15 @@ pipeline {
           sh 'hostname'
           }}}
       
-      /*stage('deploy to cloudhub'){
+      stage('deploy to cloudhub'){
+        environment{
+          
       steps{
         withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-          sh "cd /var/jenkins_home/workspace/;mvn deploy -pcloudhub"}}}*/
+          
+          sh 'ls'
+          //sh "cd /var/jenkins_home/workspace/;mvn deploy -pcloudhub"}}}
+          sh "mvn clean deploy -Dmule.env=DEV -Dcloudhub.workers=1 -Dcloudhub.worker.type=MICRO Dcloudhub.region=us-e2 -Durl=https://anypoint.mulesoft.com -Dartifact.path=./mule-application.jar"
      }
   }
 
