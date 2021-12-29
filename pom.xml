@@ -38,7 +38,8 @@
 					<classifier>mule-application</classifier>
 					<cloudHubDeployment>
 					<uri>https://anypoint.mulesoft.com</uri>
-					<muleVersion>4.3.0</muleVersion>
+					<muleVersion>4.3.0</muleVersion>					
+					<businessGroupId>3f00347a-d80d-48df-98e8-a8b65d91fc61</businessGroupId>
 					//<username>~~~Client~~~</username>
 					//<password>004d5f11b5cd4f2d956ce1201099ba76~?~beeaD9a6897d4c0b8Ea925fa0D091817</password>
 					<connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</connectedAppClientId>
