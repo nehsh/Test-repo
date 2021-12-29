@@ -37,7 +37,7 @@
              <repository>
              <id>exchange</id>
               <name>Anypoint Exchange</name>
-                <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
+                <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
                    <layout>default</layout>
                 </repository>
         </distributionManagement>
@@ -103,7 +103,7 @@
 	        <distributionManagement>
 	           <repository>
 		     <id>Anypoint Exchange</id>
-		     <url>https://maven.anypoint.mulesoft.com/api/v1/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
+		     <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
 		   </repository>
 	        </distributionManagement>
 	    </profile>
