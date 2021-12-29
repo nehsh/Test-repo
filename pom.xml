@@ -45,7 +45,7 @@
 					<connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</connectedAppClientId>
 					<connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
 					<connectedAppGrantType>client_credentials</connectedAppGrantType>
-					<applicationName>hello_world</applicationName>
+					<applicationName>hello-world</applicationName>
 					<environment>Dev</environment>
 					<region>us-east-2</region>
 					<workerType>MICRO</workerType>
