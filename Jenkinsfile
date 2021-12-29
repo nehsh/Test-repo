@@ -73,10 +73,10 @@ pipeline {
           sh 'hostname'
           }}}
       
-      stage('deploy to cloudhub'){
+      /*stage('deploy to cloudhub'){
       steps{
         withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-          sh "cd /var/jenkins_home/workspace/;mvn deploy -pcloudhub"}}}
+          sh "cd /var/jenkins_home/workspace/;mvn deploy -pcloudhub"}}}*/
      }
   }
 
