@@ -41,7 +41,7 @@
 					<muleVersion>4.3.0</muleVersion>
 					//<username>~~~Client~~~</username>
 					//<password>004d5f11b5cd4f2d956ce1201099ba76~?~beeaD9a6897d4c0b8Ea925fa0D091817</password>
-					<connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</<connectedAppClientId>
+					<connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</connectedAppClientId>
 					<connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
 					<connectedAppGrantType>client_credentials</connectedAppGrantType>
 					<applicationName>hello_world</applicationName>
