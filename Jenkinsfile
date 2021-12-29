@@ -58,7 +58,9 @@ pipeline {
         }
       stage('deploy to Exchange'){
         steps{
-          sh "mvn deploy"
+          withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+          sh "mvn clean deploy -Pexchange -Danypoint.username=USERNAME -Danypoint.password=PASSWORD" 
+          }
         }
       }
      }
