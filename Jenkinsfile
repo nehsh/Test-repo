@@ -7,7 +7,7 @@ pipeline {
       stage ('code checkout'){
         steps {
           echo "fetching code from master branch...."
-          git branch: 'master', 
+          git branch: 'dev', 
           credentialsId: 'ebbe7111-1a36-42b2-97b3-ff97f0092dbf', 
           url: 'https://github.com/nehsh/Test-repo.git'
         }
