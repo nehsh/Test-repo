@@ -76,7 +76,7 @@ pipeline {
       stage('deploy to exchange'){
         steps{
           withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-            sh "mvn deploy -pexchange"
+            sh "mvn deploy -pexchange -DmuleDeploy"
           }}}
                 
       /*stage('deploy to cloudhub'){
