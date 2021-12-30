@@ -113,15 +113,13 @@
 		    </snapshotRepository>
 		</distributionManagement>
 	    </profile>
-	  <profile>
-		<id>exchange</id>
+	  </profiles>
+		//<id>exchange</id>
 	        <distributionManagement>
 	           <repository>
 		     <id>Anypoint Exchange</id>
 		     <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
 		   </repository>
 	        </distributionManagement>
-	    </profile>
-  </profiles>
 
 </project>
