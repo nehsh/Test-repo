@@ -15,6 +15,7 @@
 
 		<app.runtime>4.3.0-20211026</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
+		<mule.maven-deploy-plugin>3.5.2</mule.maven-deploy-plugin>
 	</properties>
 
 	<build>
@@ -27,11 +28,10 @@
 			<plugin>
                              <groupId>org.apache.maven.plugins</groupId>
                               <artifactId>maven-deploy-plugin</artifactId>
-                              <version>3.5.2</version>
+                              <version>${mule.maven-deploy-plugin}</version>
 			      <extensions>true</extensions>
 			      <configuration>
-				      <classifier>mule-application</classifier>
-				       <exchange>
+				      <exchange>
 					<uri>https://anypoint.mulesoft.com</uri>
 					<muleVersion>4.3.0</muleVersion>					
 					<businessGroupId>3f00347a-d80d-48df-98e8-a8b65d91fc61</businessGroupId>
@@ -41,7 +41,7 @@
 					<connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
 					<connectedAppGrantType>client_credentials</connectedAppGrantType>
 					<applicationName>hello-world-beam-dev</applicationName>
-					</exchange>
+				      </exchange>
 			       </configuration>
                          </plugin>
 			<plugin>
