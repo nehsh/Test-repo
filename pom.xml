@@ -15,7 +15,7 @@
 
 		<app.runtime>4.3.0-20211026</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
-		<maven.deploy.plugin.version>3.5.2</maven.deploy.plugin.version>
+		
 	</properties>
 
 	<build>
@@ -39,7 +39,7 @@
                                         <connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
                                         <connectedAppGrantType>client_credentials</connectedAppGrantType>
                                         <applicationName>hello-world-beam-dev</applicationName>
-                                        <target>rtf</target>
+                                        <target>beam-dev-rtf-gke-cluster</target>
                                         <environment>Dev</environment>
                                         <provider>MC</provider>
                                         <replicas>1</replicas>
