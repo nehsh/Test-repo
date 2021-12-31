@@ -60,7 +60,7 @@
         </resources>
         <http>
           <inbound>
-            <publicUrl>hello-world-beam-dev.beamsuntory.com/*</publicUrl>
+            <publicUrl>hello-world-beam-dev.beamsuntory.com</publicUrl>
           </inbound>
         </http>
       </deploymentSettings>
