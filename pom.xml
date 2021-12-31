@@ -43,6 +43,27 @@
                                         <environment>Dev</environment>
                                         <provider>MC</provider>
                                         <replicas>1</replicas>
+					<deploymentSettings>
+        <enforceDeployingReplicasAcrossNodes>false</enforceDeployingReplicasAcrossNodes>
+        <updateStrategy>recreate</updateStrategy>
+        <clustered>false</clustered>
+        <forwardSslSession>false</forwardSslSession>
+        <lastMileSecurity>false</lastMileSecurity>
+        <resources>
+          <cpu>
+            <reserved>20m</reserved>
+            <limit>1500m</limit>
+          </cpu>
+          <memory>
+            <reserved>700Mi</reserved>
+          </memory>
+        </resources>
+        <http>
+          <inbound>
+            <publicUrl>url</publicUrl>
+          </inbound>
+        </http>
+      </deploymentSettings>
                                         </runtimeFabricDeployment>
   			       </configuration>
 			</plugin>
