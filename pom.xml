@@ -42,28 +42,8 @@
                                         <target>beam-dev-rtf-gke-cluster-pub</target>
                                         <environment>Dev</environment>
                                         <provider>MC</provider>
-                                        <replicas>1</replicas>
-					<deploymentSettings>
-        <enforceDeployingReplicasAcrossNodes>false</enforceDeployingReplicasAcrossNodes>
-        <updateStrategy>recreate</updateStrategy>
-        <clustered>false</clustered>
-        <forwardSslSession>false</forwardSslSession>
-        <lastMileSecurity>false</lastMileSecurity>
-        <resources>
-          <cpu>
-            <reserved>20m</reserved>
-            <limit>1500m</limit>
-          </cpu>
-          <memory>
-            <reserved>700Mi</reserved>
-          </memory>
-        </resources>
-        <http>
-          <inbound>
-            <publicUrl>hello-world-beam-dev.beamsuntory.com</publicUrl>
-          </inbound>
-        </http>
-      </deploymentSettings>
+					<replicas>1</replicas>
+					
                                         </runtimeFabricDeployment>
   			       </configuration>
 			</plugin>
