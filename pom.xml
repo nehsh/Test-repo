@@ -26,48 +26,25 @@
 				<version>3.0.0</version>
 			</plugin>
 			<plugin>
-                             <groupId>org.apache.maven.plugins</groupId>
-                              <artifactId>maven-deploy-plugin</artifactId>
-                              <version>${maven.deploy.plugin.version}</version>
-			      <extensions>true</extensions>
-			      <configuration>
-				      <exchange>
-					<uri>https://anypoint.mulesoft.com</uri>
-					<muleVersion>4.3.0</muleVersion>					
-					<businessGroupId>3f00347a-d80d-48df-98e8-a8b65d91fc61</businessGroupId>
-					//<username>~~~Client~~~</username>
-					//<password>004d5f11b5cd4f2d956ce1201099ba76~?~beeaD9a6897d4c0b8Ea925fa0D091817</password>
-					<connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</connectedAppClientId>
-					<connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
-					<connectedAppGrantType>client_credentials</connectedAppGrantType>
-					<applicationName>hello-world-beam-dev</applicationName>
-				      </exchange>
-			       </configuration>
-                         </plugin>
-			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<classifier>mule-application</classifier>
-					<cloudHubDeployment>
-					<uri>https://anypoint.mulesoft.com</uri>
-					<muleVersion>4.3.0</muleVersion>					
+					<runtimeFabricDeployment>
+                                        <uri>https://anypoint.mulesoft.com</uri>
+                                        <muleVersion>4.3.0</muleVersion>
 					<businessGroupId>3f00347a-d80d-48df-98e8-a8b65d91fc61</businessGroupId>
-					//<username>~~~Client~~~</username>
-					//<password>004d5f11b5cd4f2d956ce1201099ba76~?~beeaD9a6897d4c0b8Ea925fa0D091817</password>
-					<connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</connectedAppClientId>
-					<connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
-					<connectedAppGrantType>client_credentials</connectedAppGrantType>
-					<applicationName>hello-world-beam-dev</applicationName>
-					<environment>Dev</environment>
-					<region>us-east-2</region>
-					<workerType>MICRO</workerType>
-					<workers>1</workers>
-					<objectStoreV2>true</objectStoreV2>
-					</cloudHubDeployment>
-			       </configuration>
+                                        <connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</connectedAppClientId>
+                                        <connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
+                                        <connectedAppGrantType>client_credentials</connectedAppGrantType>
+                                        <applicationName>hello-world-beam-dev</applicationName>
+                                        <target>rtf</target>
+                                        <environment>dev</environment>
+                                        <provider>MC</provider>
+                                        <replicas>1</replicas>
+                                        </runtimeFabricDeployment>
+  			       </configuration>
 			</plugin>
 		</plugins>
 	</build>
