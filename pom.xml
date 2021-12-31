@@ -31,6 +31,7 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<classifier>mule-application</classifier>
 					<runtimeFabricDeployment>
                                         <uri>https://anypoint.mulesoft.com</uri>
                                         <muleVersion>4.3.0</muleVersion>
