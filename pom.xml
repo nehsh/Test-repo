@@ -40,7 +40,7 @@
                                         <connectedAppGrantType>client_credentials</connectedAppGrantType>
                                         <applicationName>hello-world-beam-dev</applicationName>
                                         <target>rtf</target>
-                                        <environment>dev</environment>
+                                        <environment>Dev</environment>
                                         <provider>MC</provider>
                                         <replicas>1</replicas>
                                         </runtimeFabricDeployment>
