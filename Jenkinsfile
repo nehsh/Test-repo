@@ -67,11 +67,15 @@ pipeline {
           sh 'hostname'
           }}}
       
+      stage('deploy-to-exchange'){
+        steps{
+          sh "mvn deploy"}}
+      
       stage('deploy-to-RTF'){
         steps{
-          withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-            sh "mvn clean -X deploy -DmuleDeploy"
-          }}
+          //withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+            sh "mvn deploy -DmuleDeploy"
+          }
         }
                
        }
