@@ -35,7 +35,7 @@
 					<runtimeFabricDeployment>
                                         <uri>https://anypoint.mulesoft.com</uri>
                                         <muleVersion>4.3.0</muleVersion>
-					<server>exchange</server>
+					<server>Exchange2</server>
                                         <applicationName>hello-world-beam-dev</applicationName>
                                         <target>beam-dev-rtf-gke-cluster-pub</target>
                                         <environment>Dev</environment>
