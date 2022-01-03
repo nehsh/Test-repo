@@ -69,7 +69,7 @@ pipeline {
      
       stage('deploy-to-RTF'){
         steps{
-          //withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+          withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
             sh "mvn deploy -DmuleDeploy"
           }
         }
