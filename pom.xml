@@ -106,8 +106,8 @@
 	  </profiles>
 	   <distributionManagement>
 	        <repository>
-		     <id>exchange</id>
-		     <name>Anypoint Exchange</name>
+		     <id>Exchange2</id>
+		     <name>Corporate Exchange</name>
 		     <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/3f00347a-d80d-48df-98e8-a8b65d91fc61/maven</url>
 		     <layout>default</layout>
 		</repository>
