@@ -72,7 +72,7 @@ pipeline {
           withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
             sh "mvn deploy -DmuleDeploy"
           }
-        }
+        }}
                
        }
   }
