@@ -65,12 +65,8 @@ pipeline {
           echo "downloading from nexus"
           sh 'pwd'
           sh 'hostname'
-          }}}
-      
-      stage('deploy-to-exchange'){
-        steps{
-          sh "mvn deploy"}}
-      
+          }}}      
+     
       stage('deploy-to-RTF'){
         steps{
           //withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
