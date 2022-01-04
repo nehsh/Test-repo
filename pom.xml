@@ -15,7 +15,6 @@
 
 		<app.runtime>4.3.0-20211026</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
-		<maven.deploy.plugin.version>3.5.2</maven.deploy.plugin.version>
 		
 	</properties>
 
@@ -45,15 +44,7 @@
 					</runtimeFabricDeployment>
   			       </configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>3.5.2</version>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
-		</plugins>
+			</plugins>
 	</build>
 	
 	<dependencies>
