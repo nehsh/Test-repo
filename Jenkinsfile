@@ -65,12 +65,19 @@ pipeline {
           echo "downloading from nexus"
           sh 'pwd'
           sh 'hostname'
-          }}}      
+          }}}   
+      stage('deploy-to-exchange'){
+        steps{
+          withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+            sh "mvn clean deploy"
+            echo"deploying to exchange"
+          }
+        }}
      
       stage('deploy-to-RTF'){
         steps{
           withCredentials([usernamePassword(credentialsId: 'anypoint', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-            sh "mvn clean deploy -DmuleDeploy"
+            sh "mvn clean package deploy -DmuleDeploy"
           }
         }}
                
