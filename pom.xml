@@ -4,7 +4,7 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>hello_world</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
 
 	<name>hello_world</name>
@@ -33,14 +33,25 @@
 				<configuration>
 					<classifier>mule-application</classifier>
 					<runtimeFabricDeployment>
-                                        <uri>https://anypoint.mulesoft.com</uri>
-                                        <muleVersion>4.3.0</muleVersion>
-					<server>Exchange2</server>
-                                        <applicationName>hello-world-beam-dev</applicationName>
-                                        <target>beam-dev-rtf-gke-cluster-pub</target>
-                                        <environment>Dev</environment>
-                                        <provider>MC</provider>
-					<replicas>1</replicas>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<businessGroupId>3f00347a-d80d-48df-98e8-a8b65d91fc61</businessGroupId>
+						<muleVersion>4.3.0</muleVersion>
+						<connectedAppClientId>004d5f11b5cd4f2d956ce1201099ba76</connectedAppClientId>
+						<connectedAppClientSecret>beeaD9a6897d4c0b8Ea925fa0D091817</connectedAppClientSecret>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<applicationName>hello-world-beam-dev</applicationName>
+						<target>beam-dev-rtf-gke-cluster-pub</target>
+						<environment>Dev</environment>
+						<provider>MC</provider>
+						<replicas>1</replicas>
+						<skipDeploymentVerification>true</skipDeploymentVerification>
+						<deploymentSettings>
+							<http>
+								<inbound>
+									<publicUrl>hello-world-beam-dev.beamsuntory.com</publicUrl>
+								</inbound>
+							</http>
+						</deploymentSettings>
 					</runtimeFabricDeployment>
   			       </configuration>
 			</plugin>
